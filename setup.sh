@@ -1,7 +1,8 @@
 #! /bin/bash
 
 echo "Get dotfiles location..."
-cwd=$(pwd)
+V_CWD=$(pwd)
+V_MY_PATH=$HOME
 
 echo "Back up existing files if present..."
 if [ -f ~/.zshrc ]
@@ -15,9 +16,9 @@ if [ -f ~/.vimrc ]
 fi
 
 echo "Linking repo files..."
-ln -s $cwd/.zshrc ~/.zshrc
-ln -s $cwd/.tmux.conf ~/.tmux.conf
-ln -s $cwd/.vimrc ~/.vimrc
+ln -s $V_CWD/.zshrc $V_MY_PATH/.zshrc
+ln -s $V_CWD/.tmux.conf $V_MY_PATH/.tmux.conf
+ln -s $V_CWD/.vimrc $V_MY_PATH/.vimrc
 
 echo "Setting up vim plug..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

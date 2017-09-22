@@ -10,6 +10,8 @@ I'm assuming some things here:
 * You're using oh-my-zsh
 * For linting, I have nodejs installed with eslint, csslint, and eslint-plugin-vue. Add more stuff as needed.
 
-There's a setup script that clone's the repo, backs up your existing .vimrc/.zshrc/.tmux.conf files, and links the ones in the repo, or just copy and paste as you will.
+There's a setup script that clone's the repo, backs up your existing .vimrc/.zshrc/.tmux.conf files, links the ones in the repo, sets up vim-plug and installs plugins. If you don't run it from inside the dotfiles folder, your life will become a furious ball of nothing.
+
+Or, you know, just copy and paste as you will.
 
 Enjoy!
