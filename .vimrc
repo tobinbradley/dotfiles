@@ -17,6 +17,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set mouse=a                     "Get scroll wheel working
 
 " =============== Finding Files ========================
 " Search down into subfolders
@@ -236,7 +237,7 @@ autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 " max line lengh that prettier will wrap on
 let g:prettier#config#print_width = 80
 " number of spaces per indentation level
-let g:prettier#config#tab_width = 4
+" let g:prettier#config#tab_width = 4
 " use tabs over spaces
 let g:prettier#config#use_tabs = 'false'
 " print semicolons
