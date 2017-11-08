@@ -249,7 +249,7 @@ let g:prettier#config#bracket_spacing = 'false'
 " put > on the last line instead of new line
 let g:prettier#config#jsx_bracket_same_line = 'true'
 " none|es5|all
-let g:prettier#config#trailing_comma = 'all'
+let g:prettier#config#trailing_comma = 'none'
 " flow|babylon|typescript|postcss|json|graphql
 let g:prettier#config#parser = 'flow'
 
