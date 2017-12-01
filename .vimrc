@@ -3,7 +3,7 @@
 set nocompatible
 
 "turn on syntax highlighting
-filetype plugin on
+filetype on
 syntax on
 
 
@@ -130,12 +130,7 @@ Plug 'reedes/vim-pencil', {'for': ['markdown', 'mkd', 'md', 'text']}
 Plug 'junegunn/goyo.vim', {'for': ['markdown', 'mkd', 'md', 'text']}
 Plug 'reedes/vim-wordy', {'for': ['markdown', 'mkd', 'md', 'text']}
 
-" Nerdtree
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
 " Code completion
-Plug 'Shougo/neocomplete.vim'
 
 " Vim airline
 Plug 'vim-airline/vim-airline'
@@ -175,58 +170,15 @@ endfunction
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
+
 " settings for vim-pencil
 augroup pencil
     autocmd!
-    autocmd FileType markdown,mkd,md call pencil#init({'wrap':'soft'})
+    autocmd FileType markdown,mkd,md,text call pencil#init({'wrap':'soft', 'textwidth': 72})
          \ | setl spell spl=en_us fdl=4 noru nonu nornu
-         \ | let g:neocomplete#disable_auto_complete=1
-         \ | Goyo
-    autocmd FileType text         call pencil#init()
+         \ | let g:airline_section_x = '%{PencilMode()}'
+         \ | set columns=100
 augroup END
-
-
-" neocomplete
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-
-" settings for Nerdtree
-map <C-n> :NERDTreeToggle<CR>
 
 
 " Prettier

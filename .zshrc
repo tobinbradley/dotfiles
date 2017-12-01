@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bira"
+ZSH_THEME="avit"
 
 DEFAULT_USER="tobin"
 
@@ -21,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin/:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/tobin/.gem/ruby/2.4.0/bin
 
 # alias some shit
+alias vim="nvim"
 alias pyserve="python3 -m http.server 8080"
 alias fucking="sudo"
 alias pushit="git push $1 $2 && ~/scripts/push-it"

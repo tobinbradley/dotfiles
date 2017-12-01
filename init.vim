@@ -1,0 +1,1 @@
+/home/tobin/.config/nvim/init.vim
