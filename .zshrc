@@ -37,6 +37,7 @@ alias exit="sh ~/.dotfiles/seeyouspacecowboy.sh; sleep 1; exit"
 alias updatekeys="sudo pacman-key --init && sudo pacman-key --populate archlinux manjaro && sudo pacman-key --refresh-keys"
 alias kp="kdbxviewer -t ~/Documents/keepass.kdbx -S"
 alias dev="~/.dotfiles/tmux-dev.sh"
+alias youtubed="youtube-dl -x --audio-format mp3 --audio-quality 0"
 
 # fortunes
 # Run on new shell
